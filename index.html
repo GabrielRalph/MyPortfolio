@@ -13,8 +13,15 @@
   </head>
   <script type = "module">
     import {Logo} from "./Logo.js";
+
     let logo = new Logo("logo");
     logo.animateScroll("page");
+    setTimeout(() => {
+      console.log('x');
+      // if (logo.scale_c == 1) {
+      //   document.getElementById("first").scrollIntoView({behavior: "smooth"});
+      // }
+    }, 2000)
   </script>
   <body>
 
@@ -24,7 +31,7 @@
 
     <div style = "opacity: 0" id = page>
       <div id = clients>
-        <a class = "sammy" href = "https://sammy.w4v.es">Sammy Pinto</a>
+        <a id = "first" class = "sammy" href = "https://sammy.w4v.es">Sammy Pinto</a>
         <p>
           Web portfolio<br />html/css, javascript
         </p>
@@ -113,7 +120,8 @@
       pointer-events: none;
     }
     #page {
-      overflow: scroll;
+      overflow-y: scroll;
+      overflow-x: hidden;
       position: fixed;
       z-index: 5;
       top: 0;
