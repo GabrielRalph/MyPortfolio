@@ -1,0 +1,34 @@
+#logo {
+  position: fixed;
+  --scale-c: 1;
+  --min-size: 8em;
+  --max-size: 80vmin;
+  --size: calc(var(--max-size) * var(--scale-c) + var(--min-size) * (1 - var(--scale-c)));
+  top: calc(50% * var(--scale-c) - (var(--size) / 2) * var(--scale-c));
+  left: calc(50% * var(--scale-c) - (var(--size) / 2) * var(--scale-c));
+  width: var(--size);
+  height: var(--size);
+  pointer-events: none;
+  z-index: -1;
+}
+
+#assets {
+  display: none;
+}
+#logo > div {
+  position: relative;
+  margin: calc(1em * (1 - var(--scale-c)));
+}
+
+#logo > div > video {
+  width: 86%;
+  height: 86%;
+  padding: 7%
+}
+
+#logo .placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.4s cubic-bezier(0.4,0,0.6,1) background;
+}

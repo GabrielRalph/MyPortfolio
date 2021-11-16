@@ -8,98 +8,126 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <link href = "https://www.danielmerson.com/Assets/font/stylesheet.css" rel="stylesheet"/>
+    <link href = "./logo.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
   </head>
+  <script type = "module">
+    import {Logo} from "./Logo.js";
+    let logo = new Logo("logo");
+    logo.animateScroll("page");
+  </script>
   <body>
+
     <div id = logo>
-      <div>
-        <video id = clipper autoplay muted loop playsinline>
-          <source src="/Lava.mov" type="video/mp4">
-        </video>
-        <img id = "placeholder" src = "logo.svg"/>
+
+    </div>
+
+    <div style = "opacity: 0" id = page>
+      <div id = clients>
+        <a class = "sammy" href = "https://sammy.w4v.es">Sammy Pinto</a>
+        <p>
+          Web portfolio<br />html/css, javascript
+        </p>
+        <a class = "bush" href = "https://www.bush.sydney"><img src = "Assets/bush_logo.png" /></a>
+        <p>
+          Web app<br />html/css, javascript
+        </p>
+        <a class = "daniel" href = "https://www.danielmerson.com">Daniel Merson</a>
+        <p>
+          Web app portfolio & custom CMS<br />html/css, javascript, firebase
+        </p>
+        <a class = "mcm"><img src = "Assets/mcm_logo.svg" /></a>
+        <p>
+          AR App & custom CMS<br />unity engine, c#, html/css, javascript, firebase
+        </p>
       </div>
     </div>
 
-    <div id = clients>
-      <a class = "sammy" href = "https://sammy.w4v.es">Sammy Pinto</a>
-      <p>
-        Web portfolio<br />html/css, javascript
-      </p>
-      <a class = "bush" href = "https://www.bush.sydney"><img src = "bush_logo.png" /></a>
-      <p>
-        Web app<br />html/css, javascript
-      </p>
-      <a class = "daniel" href = "https://www.danielmerson.com">Daniel Merson</a>
-      <p>
-        Web app portfolio & custom CMS<br />html/css, javascript, firebase
-      </p>
-      <a class = "mcm"><img src = "mcm_logo.svg" /></a>
-      <p>
-        AR App & custom CMS<br />unity engine, c#, html/css, javascript, firebase
-      </p>
-    </div>
   </body>
   <script type = "module">
-    import {SvgPlus, Vector, SvgPath, DPath} from "https://www.svg.plus/3.5.js"
-    let logo = new SvgPlus("logo");
-    let clipper = new SvgPlus("clipper");
-    let placeholder = new SvgPlus("placeholder");
-    clipper.onplay = () => {
-      console.log('x');
-      placeholder.styles = {
-        opacity: 0,
-      }
-    }
-    let sizeClip = (width) => {
-      let copy = new DPath("M63.6,16.5L63.6,16.5c0.8-3.8,3.1-7.9,14.1-7.9V2.1H35.6v6.4c10.4,0,15.6,0.6,14.9,8C30,19.1,11.7,33.1,8.1,50C4.6,66.8,16.8,80.8,36,83.5l0.1,0.1c-0.8,3.1-2.9,7.8-13.7,7.8l0,6.6l38.2,0l0-6.6c-5.5,0-13.3-0.2-11.7-7.3l0.1-0.5l0,0c20.7-2.4,39.4-16.5,43-33.6C95.7,33.1,83.3,19,63.6,16.5z M37.4,77.8L37.4,77.8c-11.9-3.1-18.9-14.3-16-27.8c2.9-13.5,14.7-24.8,28-27.8l0,0l-0.6,2.7l-6.3,29.9L37.4,77.8z M78.8,50.1c-2.9,13.7-15,25.2-28.5,28l0,0l0.5-2.3L57,46.6l3.4-15.5l1-4.7c0,0,0.5-1.7,1-4.2C74.5,25.1,81.6,36.5,78.8,50.1z");
-    //   copy.d_string = ;
+    // import {SvgPlus, Vector, SvgPath, DPath} from "https://www.svg.plus/3.5.js"
+    // let logo = new SvgPlus("logo");
+    // let clipper = new SvgPlus("clipper");
+    // let placeholder = new SvgPlus("placeholder");
+    // clipper.onplay = () => {
+    //   console.log('x');
+    //   placeholder.styles = {
+    //     opacity: 0,
+    //   }
+    // }
+    // let sizeClip = (width) => {
+    //   let copy = new DPath("M63.6,16.5L63.6,16.5c0.8-3.8,3.1-7.9,14.1-7.9V2.1H35.6v6.4c10.4,0,15.6,0.6,14.9,8C30,19.1,11.7,33.1,8.1,50C4.6,66.8,16.8,80.8,36,83.5l0.1,0.1c-0.8,3.1-2.9,7.8-13.7,7.8l0,6.6l38.2,0l0-6.6c-5.5,0-13.3-0.2-11.7-7.3l0.1-0.5l0,0c20.7-2.4,39.4-16.5,43-33.6C95.7,33.1,83.3,19,63.6,16.5z M37.4,77.8L37.4,77.8c-11.9-3.1-18.9-14.3-16-27.8c2.9-13.5,14.7-24.8,28-27.8l0,0l-0.6,2.7l-6.3,29.9L37.4,77.8z M78.8,50.1c-2.9,13.7-15,25.2-28.5,28l0,0l0.5-2.3L57,46.6l3.4-15.5l1-4.7c0,0,0.5-1.7,1-4.2C74.5,25.1,81.6,36.5,78.8,50.1z");
+    // //   copy.d_string = ;
+    // //
+    //   for (let a of copy) {
+    //     a.mul(width/100);
+    //     // console.log(a);
+    //   }
+    //   clipper.styles = {
+    //     "clip-path": `path("${copy}")`
+    //   }
+    // }
     //
-      for (let a of copy) {
-        a.mul(width/100);
-        // console.log(a);
-      }
-      clipper.styles = {
-        "clip-path": `path("${copy}")`
-      }
-    }
-
-    let SCALE = 1;
-    let sizeLogo = () => {
-      let scale = SCALE;
-      scale = scale > 1 ? 1 : scale < 0 ? 0 : scale;
-      SCALE = scale;
-      logo.styles = {
-        "--scale-c": scale
-      }
-    }
-
-
-    window.ontouchmove = () => {
-      clipper.play();
-    }
-
-    window.onscroll = () => {
-    }
-    let next = () => {
-      sizeClip(clipper.clientWidth);
-      let goal = 1 - window.scrollY/window.innerHeight;
-      if (goal > 1) goal = 1;
-      if (goal < 0) goal = 0;
-
-      SCALE = SCALE*0.9 + goal*0.1;
-      // if (SCALE < goal) SCALE += 0.04;
-      sizeLogo();
-      window.requestAnimationFrame(next);
-    }
-    window.requestAnimationFrame(next);
-
-
-    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-      document.body.style.setProperty("margin-top", "-100px")
-    }
+    // let SCALE = 1;
+    // let sizeLogo = () => {
+    //   let scale = SCALE;
+    //   scale = scale > 1 ? 1 : scale < 0 ? 0 : scale;
+    //   SCALE = scale;
+    //   logo.styles = {
+    //     "--scale-c": scale
+    //   }
+    // }
+    //
+    //
+    // window.ontouchmove = () => {
+    //   clipper.play();
+    // }
+    //
+    // window.onscroll = () => {
+    // }
+    // let next = () => {
+    //   sizeClip(clipper.clientWidth);
+    //   let goal = 1 - window.scrollY/window.innerHeight;
+    //   if (goal > 1) goal = 1;
+    //   if (goal < 0) goal = 0;
+    //
+    //   SCALE = SCALE*0.9 + goal*0.1;
+    //   // if (SCALE < goal) SCALE += 0.04;
+    //   sizeLogo();
+    //   window.requestAnimationFrame(next);
+    // }
+    // window.requestAnimationFrame(next);
+    //
+    //
+    // if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    //   document.body.style.setProperty("margin-top", "-100px")
+    // }
   </script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+    body {
+      margin: 0;
+      font-size: 2vw;
+      font-family: 'Open Sans';
+      overflow: hidden;
+      pointer-events: none;
+    }
+    #page {
+      overflow: scroll;
+      position: fixed;
+      z-index: 5;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: all;
+      scroll-behavior: smooth;
+    }
+
+    #clients {
+      margin-top: 120vh;
+      margin-bottom: 10em;
+    }
     a {
       display: block;
       text-align: center;
@@ -125,43 +153,9 @@
     .daniel {font-family: 'Druk Wide';}
     .mcm {padding-top: 1em;}
 
-    #clients {
-      margin-top: 120vh;
-    }
-    #logo img {
-      position: absolute;
-      width: 80%;
-      margin: 10%;
-      transition: 0.2s cubic-bezier(0.4, 0, 0.6, 1) opacity;
-    }
-    #clipper {
-      /* display: none; */
-      /* width: 80vmin; */
-      position: absolute;
-      width: 80%;
-      margin: 10%;
-      /* height: 100%; */
-      /* top: 50%; */
-      /* left: 50%; */
-      /* transform: translate(-50%, -50%); */
-      /* max-width: 100%; */
-      /* max-height: 100%; */
-      /* max-height: 40vh; */
-      /* clip-path:  path("M0,0L0,490L490,490Z"); */
-    }
-    #logo {
-      position: fixed;
-      --scale-c: 0;
-      --scale-s: calc(var(--scale-c) * 0.8 + 0.2);
-      top: calc(50% * var(--scale-c) + 40vmin * var(--scale-s) * (1 - var(--scale-c)));
-      left: calc(50% * var(--scale-c) + 40vmin * var(--scale-s) * (1 - var(--scale-c)));
-      width: calc(80vmin * var(--scale-s));
-      height: calc(80vmin * var(--scale-s));
-      transform: translate(-50%, -50%);
-    }
-    #logo > div {
-      position: relative;
-    }
+    /* #logo video {
+      clip-path: url("Assets/logo.svg#logo-clip");
+    } */
 
     .bline {
       border-bottom: 2px solid #ff8a3fd9;
@@ -177,13 +171,6 @@
       background:white;
       display: inline-block;
     }
-    body {
-      /* width: 100%; */
-      margin: 0;
-      margin-bottom: 10em;
-      font-size: 2vw;
-      font-family: 'Open Sans';
-      overflow: scroll;
-    }
+
   </style>
 </html>
