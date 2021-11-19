@@ -13,6 +13,7 @@ let waveR = (x) => {
 class Logo extends SvgPlus{
   constructor(id){
     super(id);
+    this.innerHTML = "";
     let rel = this.createChild("div");
     rel.innerHTML = "<video muted loop playsinline autoplay></video>"
     this.video = new SvgPlus(rel.children[0]);
@@ -59,7 +60,7 @@ class Logo extends SvgPlus{
 
   async animateScroll(page){
     page = new SvgPlus(page);
-    
+
     await this.loadVideo();
     this.placeholder.styles = {background: "transparent"};
     page.styles = {opacity: 1};
