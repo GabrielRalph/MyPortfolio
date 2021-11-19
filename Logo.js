@@ -61,9 +61,29 @@ class Logo extends SvgPlus{
   async animateScroll(page){
     page = new SvgPlus(page);
 
+
+
     await this.loadVideo();
     this.placeholder.styles = {background: "transparent"};
     page.styles = {opacity: 1};
+    page.innerHTML = `<div id = clients>
+      <a id = "first" class = "sammy" href = "https://sammy.w4v.es">Sammy Pinto</a>
+      <p>
+        Web portfolio<br />html/css, javascript
+      </p>
+      <a class = "bush" href = "https://www.bush.sydney"><img src = "Assets/bush_logo.png" /></a>
+      <p>
+        Web app<br />html/css, javascript
+      </p>
+      <a class = "daniel" href = "https://www.danielmerson.com">Daniel Merson</a>
+      <p>
+        Web app portfolio & custom CMS<br />html/css, javascript, firebase
+      </p>
+      <a class = "mcm"><img src = "Assets/mcm_logo.svg" /></a>
+      <p>
+        AR App & custom CMS<br />unity engine, c#, html/css, javascript, firebase
+      </p>
+    </div>`
 
     page.ontouchmove = () => {
       if (!this.playing) {
