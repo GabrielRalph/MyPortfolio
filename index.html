@@ -14,16 +14,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
   </head>
   <script type = "module">
+    import {count} from "./ViewCounter.js"
     import {Logo} from "./Logo.js";
 
     let logo = new Logo("logo");
     logo.animateScroll("page");
-    setTimeout(() => {
-      console.log('x');
-      // if (logo.scale_c == 1) {
-      //   document.getElementById("first").scrollIntoView({behavior: "smooth"});
-      // }
-    }, 2000)
+
   </script>
   <body>
 
