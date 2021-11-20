@@ -17,11 +17,26 @@ const DB = getDatabase(APP);
 
 let count = 0;
 
+function setViewedCookie(){
+  let now = (new Date()).getTime();
+  now += 30 * 60 * 1000;
+  document.cookie = "viewed=1; expires=Thu, " + new Date(now);
+}
+
+function isViewed(){
+  let cookie = document.cookie;
+  const matches = cookie.match(/viewed=1/g);
+  return matches != null && matches.length > 0;
+}
+
 async function incCount(){
-  let countRef = ref(DB, "myPortfolio/views");
-  let oldCount = (await get(countRef)).val();
-  count = oldCount + 1;
-  await set(countRef, count);
+  if (!isViewed()) {
+    let countRef = ref(DB, "myPortfolio/views");
+    let oldCount = (await get(countRef)).val();
+    count = oldCount + 1;
+    await set(countRef, count);
+    setViewedCookie();
+  }
 }
 
 incCount();
