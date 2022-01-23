@@ -17,12 +17,13 @@ class Logo extends SvgPlus{
     let rel = this.createChild("div");
     rel.innerHTML = "<video muted loop playsinline autoplay></video>"
     this.video = new SvgPlus(rel.children[0]);
+
     this.placeholder = rel.createChild("img", {
         class: "placeholder",
         src: "Assets/logo2.svg",
-        styles: {
-          background: "red",
-        }
+        // styles: {
+        //   background: "red",
+        // }
     });
   }
 
