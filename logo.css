@@ -26,9 +26,23 @@
   padding: 7%
 }
 
-#logo .placeholder {
+#logo .logo-mask {
   position: absolute;
   top: 0;
   left: 0;
-  transition: 0.4s cubic-bezier(0.4,0,0.6,1) background;
+}
+
+#logo .logo-mask .mask {
+  fill: white;
+}
+
+#logo .logo-mask.placeholder .dummy {
+  fill: #e00150;
+  stroke:#e00150;
+}
+
+#logo .logo-mask .dummy {
+  fill: transparent;
+  stroke: none;
+  transition: 0.4s cubic-bezier(0.4,0,0.6,1) fill;
 }
