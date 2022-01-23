@@ -2,7 +2,7 @@
   position: fixed;
   --scale-c: 1;
   --min-size: 8em;
-  --max-size: 80vmin;
+  --max-size: 70vmin;
   --size: calc(var(--max-size) * var(--scale-c) + var(--min-size) * (1 - var(--scale-c)));
   top: calc(50% * var(--scale-c) - (var(--size) / 2) * var(--scale-c));
   left: calc(50% * var(--scale-c) - (var(--size) / 2) * var(--scale-c));

@@ -1,4 +1,4 @@
-import {SvgPlus, Vector, SvgPath, DPath} from "https://www.svg.plus/3.5.js"
+import {SvgPlus, Vector, SvgPath, DPath} from "../4.js"
 const LOGO_PATH = "M63.6,16.5L63.6,16.5c0.8-3.8,3.1-7.9,14.1-7.9V2.1H35.6v6.4c10.4,0,15.6,0.6,14.9,8C30,19.1,11.7,33.1,8.1,50C4.6,66.8,16.8,80.8,36,83.5l0.1,0.1c-0.8,3.1-2.9,7.8-13.7,7.8l0,6.6l38.2,0l0-6.6c-5.5,0-13.3-0.2-11.7-7.3l0.1-0.5l0,0c20.7-2.4,39.4-16.5,43-33.6C95.7,33.1,83.3,19,63.6,16.5z M37.4,77.8L37.4,77.8c-11.9-3.1-18.9-14.3-16-27.8c2.9-13.5,14.7-24.8,28-27.8l0,0l-0.6,2.7l-6.3,29.9L37.4,77.8z M78.8,50.1c-2.9,13.7-15,25.2-28.5,28l0,0l0.5-2.3L57,46.6l3.4-15.5l1-4.7c0,0,0.5-1.7,1-4.2C74.5,25.1,81.6,36.5,78.8,50.1z";
 
 
@@ -57,33 +57,12 @@ class Logo extends SvgPlus{
     });
   }
 
-
   async animateScroll(page){
     page = new SvgPlus(page);
-
-
 
     await this.loadVideo();
     this.placeholder.styles = {background: "transparent"};
     page.styles = {opacity: 1};
-    page.innerHTML = `<div id = clients>
-      <a id = "first" class = "sammy" href = "https://sammy.w4v.es">Sammy Pinto</a>
-      <p>
-        Web portfolio<br />html/css, javascript
-      </p>
-      <a class = "bush" href = "https://www.bush.sydney"><img src = "Assets/bush_logo.png" /></a>
-      <p>
-        Web app<br />html/css, javascript
-      </p>
-      <a class = "daniel" href = "https://www.danielmerson.com">Daniel Merson</a>
-      <p>
-        Web app portfolio & custom CMS<br />html/css, javascript, firebase
-      </p>
-      <a class = "mcm"><img src = "Assets/mcm_logo.svg" /></a>
-      <p>
-        AR App & custom CMS<br />unity engine, c#, html/css, javascript, firebase
-      </p>
-    </div>`
 
     page.ontouchmove = () => {
       if (!this.playing) {
@@ -107,7 +86,6 @@ class Logo extends SvgPlus{
     window.requestAnimationFrame(next);
   }
 
-
   set scale_c(value){
     this._scale_c = value;
     this.styles = {"--scale-c": value};
@@ -116,6 +94,10 @@ class Logo extends SvgPlus{
     return this._scale_c;
   }
 }
+class ScrollLogo extends Logo {
+
+}
 
 
+SvgPlus.defineHTMLElement(ScrollLogo)
 export {Logo};

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel = "stylesheet" href = "../Fonts/stylesheet.css"/>
+  </head>
+  <script type = "module">
+    import {} from "../VList.js"
+    import {Gabriel} from "./Gabriel.js"
+    for (let key in Gabriel) {
+      let list = document.getElementById(key);
+      if (list) {
+        list.renderList(Gabriel[key])
+      }
+    }
+  </script>
+  <body>
+    <div class = "row">
+      <div>
+        <h1>Gabriel Ralph</h1>
+      </div>
+      <div>
+        <div>0492 840 426</div>
+        <div>gltralph@gmail.com</div>
+      </div>
+    </div>
+
+    <div class = "row">
+      <div>
+        <h2>Clients</h2>
+        <v-list id = "clients">
+          <div>
+            <div><b>{{client}}</b><i> - {{type}}</i></div>
+            <div>{{skills}}</div>
+            <div>{{url}}</div>
+            <div>{{date}}</div>
+          </div>
+        </v-list>
+        <h2>Projects</h2>
+        <v-list id = "projects">
+          <div>
+            <div><b>{{name}}</b><i> - {{type}}</i></div>
+            <div>{{skills}}</div>
+            <div>{{url}}</div>
+          </div>
+        </v-list>
+        <h2>Education</h2>
+        <v-list id = "education">
+          <div>
+            <div><b>{{name}}</b><i> - {{type}}</i></div>
+            <div>{{date}}</div>
+          </div>
+        </v-list>
+
+      </div>
+      <div>
+        <h2>Skills</h2>
+        <v-list id = "skills">
+          <span>{{value}}</span>
+        </v-list>
+        <h2>References</h2>
+        <v-list id = "references">
+          <div>
+            <div><b>{{name}}</b></div>
+            <div>{{role}} - {{company}}</div>
+            <div>{{email}}</div>
+            <div>{{number}}</div>
+          </div>
+        </v-list>
+      </div>
+    </div>
+
+  </body>
+
+  <style>
+    /* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap'); */
+    body{
+      margin: 2em;
+      font-size: min(2.1vw, 20px);
+      font-family: 'gabriels_handregular';
+      line-height: 1.3em;
+      letter-spacing: 0.1em;
+      /* background: #ac1818;
+      color: white; */
+    }
+    h1 {
+      margin-top: 0;
+      margin-bottom: 0.5em;
+    }
+    h2 {
+      margin-bottom: 0.3em;
+    }
+    .row {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+    }
+    .row > div:nth-of-type(2) {
+      text-align: right;
+    }
+    v-list {
+      display: flex;
+      flex-direction: column;
+    }
+    v-list > div:nth-of-type(n+2) {
+      margin-top: 1em;
+    }
+
+    v-lines .paths {
+      stroke: #fff;
+      stroke-linecap:round;
+    }
+  </style>
+</html>
