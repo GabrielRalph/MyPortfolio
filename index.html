@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta property = "og:image" content="/Assets/logo-share.png" />
     <meta property="og:image:type" content="image/png">
-    <title>Gabriel Ralph</title>
+    <title>Gabriel</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -21,37 +21,60 @@
     </div>
 
     <div style = "opacity: 0" id = page>
-      <div class = clients>
+      <div>
         <div id = header>
-          <h1>Gabriel Ralph</h1>
-          <p>gltralph@gmail.com</p>
-          <p>0492840426</p>
+          <h1>Gabriel ltR</h1>
+          <div>
+            @gabriel5leonard
+          </div>
         </div>
-        <h1>Clients</h1>
-        <a id = "first" class = "sammy" href = "https://sammy.w4v.es">Sammy Pinto</a>
-        <p>
-          Web portfolio<br />html/css, javascript
-        </p>
+        <div class = category>
+          <h1>Clients</h1>
+          <a id = "first" class = "sammy" href = "https://sammy.w4v.es">Sammy Pinto</a>
+          <p>
+            Web portfolio<br />html/css, javascript
+          </p>
 
-        <a class = "bush" href = "https://www.bush.sydney"><img src = "Assets/bush_logo.png" /></a>
-        <p>
-          Web app<br />html/css, javascript
-        </p>
+          <a class = "bush" href = "https://www.bush.sydney"><img src = "Assets/bush_logo.png" /></a>
+          <p>
+            Web app<br />html/css, javascript
+          </p>
 
-        <a class = "daniel" href = "https://www.danielmerson.com"><img src = "Assets/daniel_logo.svg" /></a>
-        <p>
-          Web app portfolio & custom CMS<br />html/css, javascript, firebase
-        </p>
+          <a class = "daniel" href = "https://www.danielmerson.com"><img src = "Assets/daniel_logo.svg" /></a>
+          <p>
+            Web app portfolio & custom CMS<br />html/css, javascript, firebase
+          </p>
 
-        <a class = "mcm" href = "https://testflight.apple.com/join/mk7YcBM6"><img src = "Assets/mcm_logo.svg" /></a>
-        <p>
-          AR App & custom CMS<br />unity engine, c#, html/css, javascript, firebase
-        </p>
+          <a class = "mcm" href = "https://apps.apple.com/au/app/visualise/id1579455972"><img src = "Assets/mcm_logo.svg" /></a>
+          <p>
+            AR App & custom CMS<br />unity engine, c#, html/css, javascript, firebase
+          </p>
 
-        <a href = "https://ellen.w4v.es/">Ellen Doolan</a>
-        <p>
-          Prop messeging app for film<br />html/css, javascript
-        </p>
+          <a href = "https://ellen.w4v.es/">Ellen Doolan</a>
+          <p>
+            Prop messeging app for film<br />html/css, javascript
+          </p>
+        </div>
+        <div class = "category">
+          <h1>Projects</h1>
+          <a href = "https://emb.w4v.es">EMB</a>
+          <p>
+            DST Embroidery digitiser. Using svg's
+            made with a vector drawing app (e.g. illustrator)
+            make embroidery machine code. Still a work
+            in progress :).
+          </p>
+
+          <a href = "https://uml.w4v.es">UML</a>
+          <p>
+            Make UML/flowchart diagrams with cute boxes and curvy links.
+          </p>
+
+          <a href = "https://rain.w4v.es">Rain</a>
+          <p>
+            Rain dress (for fun).
+          </p>
+        </div>
       </div>
     </div>
 
@@ -142,6 +165,9 @@
       overflow: hidden;
       pointer-events: none;
     }
+    h1, h2, h3 {
+      font-weight: normal;
+    }
 
     @media print {
       body {
@@ -167,6 +193,7 @@
     #resume h1 {
       margin-top: 0;
       margin-bottom: 0.5em;
+      font-weight: normal;
     }
     #resume h2 {
       margin-bottom: 0.3em;
@@ -209,35 +236,40 @@
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: calc(9em / 1.5);
-
     }
+
     #header h1 {
       display: inline;
       margin: 0;
+      font-weight: normal;
     }
     #header p {
+      display: inline;
+      text-align: center;
       margin: 0.25em;
     }
 
 
-    .clients {
+    #page > div {
       margin: 7em;
       margin-top: 120vh;
       margin-bottom: 10em;
 
     }
-    .clients > h1 {
+    .category > h1 {
+      margin-top: 3em;
+      margin-bottom: 0;
+      font-size: 3em;
       text-align: center;
       color: #e00150;
     }
 
 
-    .clients p {
+    .category p {
       opacity: 0.8;
     }
 
-    .clients a {
+    .category a {
       display: block;
       text-align: center;
       font-size: 3em;
@@ -246,28 +278,28 @@
       text-decoration: none;
       transition: 0.2s cubic-bezier(0.4, 0, 0.6, 1) transform;
     }
-    .clients p{
+    .category p{
       text-align: center;
     }
-    .clients a:hover {
+    .category a:hover {
       transform: scale(1.1);
     }
-    .clients a img {
+    .category a img {
       height: 1em;
       max-width: 100%;
     }
 
-    .clients .bush img {
+    .category .bush img {
       height: 2em;
     }
-    .clients .sammy {font-family: "Comic Neue"; font-weight: 600;}
-    .clients .mcm {padding-top: 1em;}
-    .clients .bline {
+    .category .sammy {font-family: "Comic Neue"; font-weight: 600;}
+    .category .mcm {padding-top: 1em;}
+    .category .bline {
       border-bottom: 2px solid #ff8a3fd9;
       text-align: center;
     }
 
-    .clients h2 {
+    .category h2 {
       font-size: 2em;
       color: #ff8a3fd9;
       font-weight: 300;
